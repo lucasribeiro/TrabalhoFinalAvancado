@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="88" y="-27"/>
         </scene>
-        <!--Move Detail Controller-->
+        <!--Movie Detail Controller-->
         <scene sceneID="6nx-Rz-i8o">
             <objects>
-                <viewController id="JC2-QU-Jhi" customClass="MoveDetailController" customModule="TrabalhoFinalAvancado" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JC2-QU-Jhi" customClass="MovieDetailController" customModule="TrabalhoFinalAvancado" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PzI-9w-lfa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

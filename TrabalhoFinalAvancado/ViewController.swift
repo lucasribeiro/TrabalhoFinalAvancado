@@ -7,9 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, Coordinating, UITableViewDataSource, UITableViewDelegate {
     let tableView = UITableView()
     let cellReuseIdentifier = "cell"
+    var coordinator: Coordinator?
     /*let data = [("imagem1.jpg", "Texto da célula 1"),
                 ("imagem2.jpg", "Texto da célula 2"),
                 ("imagem3", "Texto da célula 3"),
@@ -62,8 +63,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         print("Célula selecionada: \(id)")
         
+        //coordinator?.navigate(to: .moviesDetails, data: id)
+        
         // WITHOUT COORDINATOR
-        // self.present(MovieDetailsController(movieId: id), animated: true)
+        self.present(MovieDetailController(movieId: id), animated: true)
         //coordinator?.navigate(to: .moviesDetails, data: id)
     }
     

@@ -9,6 +9,7 @@ import Foundation
 
 protocol MoviesServiceType {
     func getMovies(completion: @escaping (Data?, Error?) -> Void) -> Void
+    func getDetails(movieId: String, completion: @escaping (Data?, Error?) -> Void) -> Void
 }
 
 class MoviesService: MoviesServiceType {
@@ -20,6 +21,14 @@ class MoviesService: MoviesServiceType {
         let url = "\(uri)\(topRatedEndpoint)?api_key=\(apiKey)"
         
         URLSession.shared.dataTask(with: URL(string: url)!,
+           completionHandler: { (data, response, error) in
+                completion(data, error)
+            }
+        ).resume()
+    }
+    
+    func getDetails(movieId: String, completion: @escaping (Data?, Error?) -> Void) -> Void {
+        URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/\(movieId)?api_key=\(apiKey)")!,
            completionHandler: { (data, response, error) in
                 completion(data, error)
             }
